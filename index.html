@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aarya Youth Organisation</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('bg2.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: #fff;
+            background-color: grey;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: -1;
+        }
+
+        header {
+            background-color: transparent;
+
+            padding: 120px;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+            margin-right: 100px;
+
+        }
+
+
+        section {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            text-decoration: none;
+            background-color: #007BFF;
+            color: #fff;
+            border-radius: 5px;
+            transition: 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #0056b3;
+        }
+
+        .footer1 {
+            background-color: #1a1a1a;
+            padding: 10px;
+            text-align: center;
+            color: #fff;
+
+            bottom: 0;
+            width: 100%;
+        }
+
+        .logo {
+
+            height: 194px;
+            border-radius: 50%;
+        }
+
+
+
+        .hamburger-container {
+            display: none;
+
+            cursor: pointer;
+            padding: 10px;
+        }
+
+        .hamburger-container i {
+            font-size: 24px;
+        }
+
+
+        .nav-menu {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .nav-menu a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 18px;
+        }
+
+
+        @media (max-width: 768px) {
+            .hamburger-container {
+                display: block;
+            }
+
+            .nav-menu {
+                display: none;
+
+                flex-direction: column;
+                background-color: rgba(0, 0, 0, 0.7);
+                position: absolute;
+                top: 60px;
+
+                left: 0;
+                width: 100%;
+                z-index: 1;
+            }
+
+            .nav-menu a {
+                margin: 10px 0;
+            }
+
+            .nav-menu.active {
+                display: flex;
+            }
+        }
+
+
+
+        form {
+
+            max-width: 600px;
+            margin: auto;
+
+            background-color: transparent;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        form label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        form input,
+        form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        header h1 {
+            margin: 0;
+            margin-right: 120px;
+            font-size: 20px;
+
+        }
+
+        section.achivements {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            padding: 40px;
+
+        }
+
+        .achivement-box {
+            box-sizing: border-box;
+            width: 30%;
+            padding: 20px;
+            margin: 10px;
+
+            background-color: transparent;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+            text-align: center;
+
+        }
+
+        .achivement-box:hover {
+            transform: scale(1.05);
+        }
+
+        .achivement-box img {
+            width: 210px;
+            height: 210px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+
+        .achivement-box h2 {
+            margin-bottom: 10px;
+        }
+
+        section.services {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            padding: 40px;
+        }
+
+        .service-box {
+            box-sizing: border-box;
+            width: 30%;
+            padding: 20px;
+            margin: 10px;
+
+            background-color: transparent;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+            text-align: center;
+        }
+
+        .service-box:hover {
+            transform: scale(1.05);
+        }
+
+        .service-box img {
+            width: 210px;
+            height: 210px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+
+        .service-box h2 {
+            margin-bottom: 10px;
+        }
+
+        .join {
+            color: white;
+        }
+
+        .join a {
+            color: white;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        .member {
+            display: inline-block;
+            margin: 20px;
+        }
+
+        .member img {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #fff;
+
+        }
+
+        .member p {
+            margin: 10px 0;
+        }
+
+        .member:hover img {
+            transform: scale(1.1);
+        }
+
+        .footer {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            width: 100%;
+        }
+
+        .social-icons {
+            font-size: 24px;
+            margin: 10px;
+        }
+
+        .social-icons a {
+            color: white;
+            padding: 5px;
+        }
+
+        .social-icons a:hover {
+            font-size: 26px;
+            transition: 0.1s;
+
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        .footer-links li {
+            margin: 0 10px;
+        }
+
+        .footer-links a {
+            text-decoration: underline;
+            color: white;
+        }
+
+        .footer-links a:hover {
+            font-size: 18px;
+            transition: 0.1s;
+
+        }
+
+        header p {
+            margin-right: 110px;
+        }
+
+        .heading {
+            margin-top: 63px;
+        }
+
+        .message-img img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #fff;
+        }
+
+        .event {
+            border: 1px solid #ddd;
+            padding: 1em;
+            margin-bottom: 1em;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 60px;
+            }
+        }
+
+        /* @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                align-items: center;
+                padding: 20px;
+            }
+
+            nav a {
+                margin: 10px 0;
+            }
+        } */
+
+        section {
+            padding: 40px;
+        }
+
+        @media (max-width: 768px) {
+            section {
+                padding: 20px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .service-box {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                display: block;
+            }
+        }
+
+        .update-Info {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .updates {
+            margin-top: 20px;
+        }
+
+        .update {
+            color: black;
+        }
+        @media (max-width: 768px) {
+            .achivement-box {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="hamburger-container">
+        <i class="fas fa-bars"></i>
+    </div>
+
+
+    <nav class="nav-menu">
+        <a href="home.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+
+        <a href="event.html">Events & Activities</a>
+        <a href="achivements.html">Achievements</a>
+        <a href="join.html">Join Us</a>
+        <a href="updates.html">Latest Updates</a>
+        <a href="subcription.html">Subcription</a>
+    </nav>
+
+
+    <section class="heading">
+        <img src="logo (2).jpg" alt="Your Startup Logo" class="logo">
+        <h1>Aarya Youth Organisation</h1>
+        <p>Registered under Societies Act of XXI of 1860 RS/CA/243/R/16 of 2023-24</p>
+    </section>
+
+
+    <section>
+        <h2 class="join">Join Our Community</h2>
+        <p class="join">Be part of the innovation. Fill out the form below to join our community and stay updated with
+            the latest events and opportunities.</p>
+
+        <form action="https://api.web3forms.com/submit" method="post">
+            <input type="hidden" name="access_key" value="24f2ea62-9b3e-4ee4-a812-87566a8ba89b">
+            <label for="name" class="join"><i class="fa-regular fa-user"></i> Your Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email" class="join"><i class="fa-regular fa-envelope"></i> Your Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="number" class="join"><i class="fa-solid fa-phone"></i> Your Phone number:</label>
+            <input type="number" id="number" name="number" required>
+
+            <label for="message" class="join">Why do you want to join us?</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+
+            <button type="submit" class="cta-button">Join Now</button>
+        </form>
+    </section>
+
+
+    <section>
+        <h2 class="join">About Us</h2>
+        <p class="join">Aarya Youth Organization, registered under the Societies Act of XXI of 1860 (RS/CA/243/R/16 of
+            2023-24), is a dynamic NGO dedicated to youth empowerment, cultural enrichment, and sports excellence. Our
+            mission is to build resilient communities by providing educational resources, celebrating cultural
+            diversity, and promoting inclusive sports opportunities. With a focus on transparency and ethical practices,
+            Aarya Youth Organization actively engages with communities to create a positive impact and foster a
+            brighter, more inclusive future for all.</p>
+    </section>
+    <section>
+        <h2 class="join">Board members</h2>
+        <div class="container">
+            <div class="member">
+                <img src="srimoy2.png" alt="Member 1">
+                <p class="join">Srimoy Bhattacharjee</p>
+                <p class="join">Founder & President</p>
+            </div>
+
+            <div class="member">
+                <img src="soumyadeep.jpg" alt="Member 2">
+                <p class="join">Soumyadeep Bhattacharjee</p>
+                <p class="join">Vice President</p>
+            </div>
+
+            <div class="member">
+                <img src="nobonita.jpg" alt="Member 3">
+                <p class="join">Nobonita Das</p>
+                <p class="join">General Secretary</p>
+            </div>
+            <div class="member">
+                <img src="priyanka.jpg" alt="Member 3">
+                <p class="join">Priyanka Nath</p>
+                <p class="join">Joint Secretary</p>
+            </div>
+            <div class="member">
+                <img src="fahim.jpg" alt="Member 3">
+                <p class="join">MD Fahim Laskar</p>
+                <p class="join">Treasurer</p>
+            </div>
+            <div class="member">
+                <img src="rajbir.jpg" alt="Member 3">
+                <p class="join">Rajbeer Biswas</p>
+                <p class="join">Joint Treasurer</p>
+            </div>
+            <div class="member">
+                <img src="swarnadeep.jpg" alt="Member 3">
+                <p class="join">Swarnadeep Ghosh</p>
+                <p class="join">Spokesperson</p>
+            </div>
+            <div class="member">
+                <img src="dolly.jpg" alt="Member 3">
+                <p class="join">Dolly Tiwari</p>
+                <p class="join">Organising Secretary</p>
+            </div>
+            <div class="member">
+                <img src="ankita.jpg" alt="Member 3">
+                <p class="join">Ankita Bhowmik</p>
+                <p class="join">Cultural Secretary</p>
+            </div>
+            <div class="member">
+                <img src="anupama.jpg" alt="Member 3">
+                <p class="join">Anupama chakraborty</p>
+                <p class="join">Service Chairperson</p>
+            </div>
+            <div class="member">
+                <img src="reya.jpg" alt="Member 3">
+                <p class="join">Reya Suklabaidya</p>
+                <p class="join">Social Media Incharge</p>
+
+            </div>
+
+            <div class="member">
+                <img src="rituraj.jpg" alt="Member 3">
+                <p class="join">Rituraj Laskar</p>
+                <p class="join">Public Relation Officer</p>
+
+            </div>
+            <div class="member">
+                <img src="kunal.jpg" alt="Member 3">
+                <p class="join">Kunal Chanda</p>
+                <p class="join">Membership Chairperson(Head)</p>
+
+            </div>
+            <div class="member">
+                <img src="deepjyoti.jpg" alt="Member 3">
+                <p class="join">Deepjyoti Bhowmik</p>
+                <p class="join">Membership Team Incharge</p>
+
+            </div>
+
+            <div class="member">
+                <img src="baidik2.jpg" alt="Member 3">
+                <p class="join">Baidik Mazumdar</p>
+                <p class="join">Website Chairperson</p>
+
+            </div>
+        </div>
+    </section>
+    <section>
+        <h2>Message</h2>
+        <div class="message-img"><img src="srimoy2.png" alt=""></div>
+        <p>Srimoy Bhattacharjee</p>
+        <p>Founder & President</p>
+        <p>AARYA stands as a paragon of versatility, transcending mere organizational bounds to become a dynamic force
+            committed to catalyzing positive change.
+            Our dedication extends across diverse sectors, employing a holistic approach to address uncharted
+            territories with unwavering resolve. <br>
+
+            Within AARYA, we are more than an organization; we are a familial community dedicated to the
+            self-development of our members, sculpting leaders for tomorrow. Our emphasis on personal growth is
+            profound, nurturing individuals into exemplary human beings. In AARYA, we coalesce as a harmonious family,
+            united in our pursuit of excellence. <br>
+
+            The profound love bestowed upon us since day one is the catalyst propelling our passion. We earnestly seek
+            your steadfast support on this transformative journey. Your invaluable advice and perspectives on each
+            initiative are not just welcomed but cherished, fostering a collaborative ethos for enduring impact.</p>
+        <br>
+        <div class="message-img"><img src="soumyadeep.jpg" alt=""></div>
+        <p>Soumyadeep Bhattacharjee</p>
+        <p>Vice President</p>
+        <p>Hello,<br> I'm Soumyadeep Bhattacharjee, a final semester Mechanical Engineering student and Vice President
+            of
+            AARYA Youth Organisation. I joined 1.5 years ago, contributing to our NGO's growth. We've become a leading
+            organization, recognized by Hon'ble MLA Silchar, Hon'ble MP Silchar, DC Cachar, SP Cachar, and others. Our
+            team's dedication resulted in awards for social service. As VP, I emphasize collaboration, innovation, and
+            sustainability. Despite challenges, our team's dedication ensures successful project completion. I invite
+            more students and professionals to join us for positive societal change. Our dedication and strategic
+            brilliance set a standard for excellence. <br> Thank you!</p>
+        <div class="message-img"><img src="nobonita.jpg" alt=""></div>
+        <p>Nobonita Das</p>
+        <p>General Secretary</p>
+        <p>In the kaleidoscope of Aarya, each member is a vibrant hue, blending dedication, passion, and purpose. <br>
+
+            As the General Secretary, I am privileged to witness the symphony of shared dreams and collective
+            achievements that define our organization. <br>
+
+
+            Aarya is not just a name; it's a melody of aspirations, played by every member, creating a harmonious
+            tapestry of success. <br>
+            Together, let us continue composing the extraordinary story of Aarya, where each note contributes to the
+            grand symphony of our shared journey. <br>
+            Your commitment is the key that unlocks the melody of our collective success.</p>
+
+    </section>
+
+    <section>
+        <h2>Upcoming events</h2>
+        <p>Stay tuned for exciting events happening soon!</p>
+    </section>
+    <section>
+
+        <div class="event">
+            <h3>Event 1- PCOS/PCOD Awareness Seminar</h3>
+            <p>Date: The date for this event is yet to be determined.</p>
+
+        </div>
+    </section>
+
+    <section>
+        <h2>Monthly Event</h2>
+    </section>
+    <section class="services">
+        <div class="service-box">
+            <img src="IMG_20240114_203305.jpg" alt="Service 1">
+            <h2>Project Udaan</h2>
+            <p>Aarya Youth Organisation's initiative, "Udaan" focuses on distributing sanitary pads to address menstrual
+                hygiene. This NGO aims to empower women by providing access to essential sanitary products, fostering a
+                positive impact on their health and well-being.</p>
+            <a href="sponsorship.html" class="cta-button">Monthly Sponsorship Highlights</a> <br> <br>
+            <a href="subcription.html" class="cta-button">Make Payment</a>
+        </div>
+    </section>
+
+
+    <section>
+        <h2>Past Events</h2>
+    </section>
+
+    <section class="services">
+        <div class="service-box">
+            <img src="cleanliness.jpg" alt="Service 3">
+            <h2>Cleanliness Drive</h2>
+            <p>"Aarya Youth Org joined MLA Shri Dipayan Chakraborty's Cleanliness Drive for a greener planet. Together
+                with diverse NGOs, we took strides towards sustainability. Today, we embraced the responsibility for a
+                cleaner planet with passion."</p>
+        </div>
+        <div class="service-box">
+            <img src="IMG_20240114_203220.jpg" alt="Service 3">
+            <h2>Raktadaan</h2>
+            <p>"Fuel the spirit of giving! Join Aarya Youth Organisation on December 29th for our Blood Donation Camp.
+                Your blood is a lifeline, and together, let's reach maximum donors to spread hope and save lives.
+                Embrace the power to make a difference!"</p>
+        </div>
+
+
+        <div class="service-box">
+            <img src="IMG_20240114_203236.jpg" alt="Service 2">
+            <h2>Cloth Donation Drive</h2>
+            <p>"Donate your old clothes for those who are waiting for their new ones! Let's share the warmth this
+                winter. Don't miss the chance to contribute- the last date for donations is December 26th, 2024.
+                Together, let's make a difference" </p>
+        </div>
+
+
+
+    </section>
+    <section><a href="event.html" class="cta-button">Read More</a></section>
+    <section class="update-Info">
+        <h2 class="update">Latest Updates</h2>
+
+        <div class="updates">
+            <p class="update"><strong>1) List of Executive Members of Aarya Youth Organisation</strong> <a
+                    href="List of Executive Members.pdf" download class="cta-button"><i
+                        class="fa-solid fa-file-pdf"></i>
+                    Download PDF<i class="fa-solid fa-download"></i></a></p>
+            <a href="updates.html">Read More</a>
+
+        </div>
+
+    </section>
+    <section>
+        <h2>Our Achievements</h2>
+    </section>
+
+    <section class="achivements">
+
+        <div class="achivement-box">
+            <img src="dipyanchakraborty.jpg" alt="Service 3">
+            <p>"Grateful for the honour bestowed by Honourable MLA of Silchar Constituency Shri Dipayan Chakraborty for
+                actively participating in the cleanliness drive in the town organised on the occasion of Ram mandir
+                pratishtha.
+                "</p>
+        </div>
+        <div class="achivement-box">
+            <img src="barakaward.jpg" alt="Service 3">
+            <p>"On 16th of January 23 Team Aarya was awarded in the BARAK AWARDS 2023 for it's work for the society. We
+                thank Joy Radha Seba Samiti for felicitating us and we would also like to congratulate them for hosting
+                the event with such grace."</p>
+        </div>
+        <div class="achivement-box">
+            <img src="hope for gem.jpg" alt="Service 3">
+            <p>"A day to remember for Team Aarya! On 9th January 23 Team Aarya was awarded with the category of NGO by
+                @hopeforgemssociety in the Barak Iconic Awards! We would like to thank Hopes For Gems Society for the
+                recognition.
+                "</p>
+        </div>
+        <div class="achivement-box">
+            <img src="KRC foundation.jpg" alt="Service 3">
+            <p>"Team Aarya is glad to receive another award for their work towards the society! We thank Lifeline
+                Forever Foundation and KRC Foundation for this token of appreciation and we congratulate them on
+                successfully hosting the VISION 2023 Event!"</p>
+        </div>
+
+    </section>
+    <section>
+        <h2>Monthly Subscription</h2>
+
+        <form action="https://api.web3forms.com/submit" method="POST">
+
+            <input type="hidden" name="access_key" value="24f2ea62-9b3e-4ee4-a812-87566a8ba89b">
+
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" required>
+
+            <label for="amount">Amount:</label>
+            <input type="number" id="amount" name="amount" required>
+
+
+
+            <label for="qrCode">QR Code Scan:</label>
+            <img src="QR Scan.jpg" alt="QR Code" id="qrCode" style="width: 165px;height: 165px;">
+
+            <label for="paymentScreenshot">Payment Screenshot:</label>
+            <input type="file" id="paymentScreenshot" name="paymentScreenshot" accept="image/*" required>
+
+            <label for="amount">UPI transaction ID:</label>
+            <input type="text" id="transactionID" name="transactionID" required>
+
+            <button type="submit" class="cta-button">Submit</button>
+        </form>
+        <script>
+            document.getElementById('subscriptionForm').addEventListener('submit', function (event) {
+                event.preventDefault();
+
+
+                alert('Subscription successful!');
+            });
+        </script>
+
+
+    </section>
+
+
+    <section class="footer">
+        <div class="social-icons">
+            <a href="https://www.instagram.com/aarya.ngo?igsh=Z3g2dnN5cmxqazZh" target="_blank" title="Instagram"><i
+                    class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com/aaryaorganisation?mibextid=ZbWKwL" target="_blank" title="Facebook"><i
+                    class="fab fa-facebook"></i></a>
+            <a href="https://www.linkedin.com/in/aarya-youth-organisation-a031a92ab?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="https://www.youtube.com/c/yourchannel" target="_blank"><i class="fab fa-youtube"></i></a>
+            <a href="https://x.com/AaryaYouth_Org?t= " target="_blank"><i class="fab fa-twitter"></i></a>
+
+        </div>
+        <ul class="footer-links">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="join.html">Join us</a></li>
+        </ul>
+        <div class="contact-info">
+            <p class="join">Email: <a href="aaryaforworld@gmail.com">aaryaforworld@gmail.com</a></p>
+            <p>Phone: 8471862787 / 7002975762</p>
+        </div>
+    </section>
+
+
+    <footer class="footer1">
+        <p>&copy; 2024 Aarya Youth Organisation. All rights reserved.</p>
+    </footer>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const hamburgerIcon = document.querySelector('.hamburger-container');
+            const navMenu = document.querySelector('.nav-menu');
+
+            hamburgerIcon.addEventListener('click', function () {
+                navMenu.classList.toggle('active');
+            });
+        });
+    </script>
+
+</body>
+
+</html>

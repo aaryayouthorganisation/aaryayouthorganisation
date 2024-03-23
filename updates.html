@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latest Updates</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('bg2.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: #fff;
+            background-color: grey;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: -1;
+        }
+
+        h1{
+            text-align: center;
+        }
+
+        section {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        .updates {
+            margin-top: 20px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            text-decoration: underline;
+            /* background-color: #007BFF; */
+            /* color: #fff; */
+            color: black;
+            border-radius: 5px;
+            transition: 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #0056b3;
+        }
+
+
+        
+
+        .update {
+            color: black;
+        }
+        @media screen and (max-width: 600px) {
+            body {
+                background-attachment: scroll;
+            }
+
+            section {
+                max-width: 100%;
+                padding: 10px;
+            }
+        }
+        .hamburger-container {
+            display: none;
+
+            cursor: pointer;
+            padding: 10px;
+        }
+
+        .hamburger-container i {
+            font-size: 24px;
+        }
+
+
+        .nav-menu {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .nav-menu a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 18px;
+        }
+
+
+        @media (max-width: 768px) {
+            .hamburger-container {
+                display: block;
+            }
+
+            .nav-menu {
+                display: none;
+
+                flex-direction: column;
+                background-color: rgba(0, 0, 0, 0.7);
+                position: absolute;
+                top: 60px;
+
+                left: 0;
+                width: 100%;
+                z-index: 1;
+            }
+
+            .nav-menu a {
+                margin: 10px 0;
+            }
+
+            .nav-menu.active {
+                display: flex;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="hamburger-container">
+        <i class="fas fa-bars"></i>
+    </div>
+
+    
+    <nav class="nav-menu">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+
+        <a href="event.html">Events & Activities</a>
+        <a href="join.html">Join Us</a>
+        <a href="updates.html">Latest Updates</a>
+        <a href="subcription.html">Subcription</a>
+    </nav>
+    <h1>Latest Updates</h1>
+
+
+    <section>
+
+        <div class="updates">
+            <p class="update"><strong>1) List of Executive Members of Aarya Youth Organisation</strong> <a
+                    href="List of Executive Members.pdf" download class="cta-button"><i class="fa-solid fa-file-pdf"></i>
+                    Download PDF<i class="fa-solid fa-download"></i></a></p>
+            
+        </div>
+
+    </section>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const hamburgerIcon = document.querySelector('.hamburger-container');
+            const navMenu = document.querySelector('.nav-menu');
+
+            hamburgerIcon.addEventListener('click', function () {
+                navMenu.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+
+</html>

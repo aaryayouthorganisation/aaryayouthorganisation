@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('bg2.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: #fff;
+            background-color: grey;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: -1;
+        }
+        section h1{
+            text-align: center;
+            justify-content: center;
+        }
+        @media (max-width: 768px) {
+            .container {
+                display: block;
+            }
+        }
+        
+
+        @media (max-width: 768px) {
+            section {
+                padding: 20px;
+            }
+        }
+        .message-img img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #fff;
+        }
+        .member p {
+            margin: 10px 0;
+        }
+
+        .member:hover img {
+            transform: scale(1.1);
+        }
+        .container {
+            text-align: center;
+        }
+
+        .member {
+            display: inline-block;
+            margin: 20px;
+        }
+
+        .member img {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #fff;
+
+        }
+        h2{
+            text-align: center;
+        }
+        section {
+            padding: 20px;
+            text-align: center;
+        }
+        .hamburger-container {
+            display: none;
+
+            cursor: pointer;
+            padding: 10px;
+        }
+
+        .hamburger-container i {
+            font-size: 24px;
+        }
+
+
+        .nav-menu {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .nav-menu a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 18px;
+        }
+
+
+        @media (max-width: 768px) {
+            .hamburger-container {
+                display: block;
+            }
+
+            .nav-menu {
+                display: none;
+
+                flex-direction: column;
+                background-color: rgba(0, 0, 0, 0.7);
+                position: absolute;
+                top: 60px;
+
+                left: 0;
+                width: 100%;
+                z-index: 1;
+            }
+
+            .nav-menu a {
+                margin: 10px 0;
+            }
+
+            .nav-menu.active {
+                display: flex;
+            }
+        }
+
+
+    </style>
+
+</head>
+
+<body>
+    <div class="hamburger-container">
+        <i class="fas fa-bars"></i>
+    </div>
+
+    
+    <nav class="nav-menu">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+
+        <a href="event.html">Events & Activities</a>
+        <a href="join.html">Join Us</a>
+        <a href="updates.html">Latest Updates</a>
+        <a href="subcription.html">Subcription</a>
+    </nav>
+    
+    <section>
+        <h1>About Us</h1>
+    </section>
+    <section>
+        Aarya Youth Organization, registered under the Societies Act of XXI of 1860 (RS/CA/243/R/16 of 2023-24), is a
+        dynamic NGO dedicated to youth empowerment, cultural enrichment, and sports excellence. Our mission is to build
+        resilient communities by providing educational resources, celebrating cultural diversity, and promoting
+        inclusive sports opportunities. With a focus on transparency and ethical practices, Aarya Youth Organization
+        actively engages with communities to create a positive impact and foster a brighter, more inclusive future for
+        all.
+    </section>
+    <section>
+        <h2 class="join">Board members</h2>
+        <div class="container">
+            <div class="member">
+                <img src="srimoy2.png" alt="Member 1">
+                <p class="join">Srimoy Bhattacharjee</p>
+                <p class="join">Founder & President</p>
+            </div>
+
+            <div class="member">
+                <img src="soumyadeep.jpg" alt="Member 2">
+                <p class="join">Soumyadeep Bhattacharjee</p>
+                <p class="join">Vice President</p>
+            </div>
+
+            <div class="member">
+                <img src="nobonita.jpg" alt="Member 3">
+                <p class="join">Nobonita Das</p>
+                <p class="join">General Secretary</p>
+            </div>
+            <div class="member">
+                <img src="priyanka.jpg" alt="Member 3">
+                <p class="join">Priyanka Nath</p>
+                <p class="join">Joint Secretary</p>
+            </div>
+            <div class="member">
+                <img src="fahim.jpg" alt="Member 3">
+                <p class="join">MD Fahim Laskar</p>
+                <p class="join">Treasurer</p>
+            </div>
+            <div class="member">
+                <img src="rajbir.jpg" alt="Member 3">
+                <p class="join">Rajbeer Biswas</p>
+                <p class="join">Joint Treasurer</p>
+            </div>
+            <div class="member">
+                <img src="swarnadeep.jpg" alt="Member 3">
+                <p class="join">Swarnadeep Ghosh</p>
+                <p class="join">Spokesperson</p>
+            </div>
+            <div class="member">
+                <img src="dolly.jpg" alt="Member 3">
+                <p class="join">Dolly Tiwari</p>
+                <p class="join">Organising Secretary</p>
+            </div>
+            <div class="member">
+                <img src="ankita.jpg" alt="Member 3">
+                <p class="join">Ankita Bhowmik</p>
+                <p class="join">Cultural Secretary</p>
+            </div>
+            <div class="member">
+                <img src="anupama.jpg" alt="Member 3">
+                <p class="join">Anupama chakraborty</p>
+                <p class="join">Service Chairperson</p>
+            </div>
+            <div class="member">
+                <img src="reya.jpg" alt="Member 3">
+                <p class="join">Reya Suklabaidya</p>
+                <p class="join">Social Media Incharge</p>
+
+            </div>
+
+            <div class="member">
+                <img src="rituraj.jpg" alt="Member 3">
+                <p class="join">Rituraj Laskar</p>
+                <p class="join">Public Relation Officer</p>
+
+            </div>
+            <div class="member">
+                <img src="kunal.jpg" alt="Member 3">
+                <p class="join">Kunal Chanda</p>
+                <p class="join">Membership Chairperson(Head)</p>
+
+            </div>
+            <div class="member">
+                <img src="deepjyoti.jpg" alt="Member 3">
+                <p class="join">Deepjyoti Bhowmik</p>
+                <p class="join">Membership Team Incharge</p>
+
+            </div>
+
+            <div class="member">
+                <img src="baidik2.jpg" alt="Member 3">
+                <p class="join">Baidik Mazumdar</p>
+                <p class="join">Website Chairperson</p>
+
+            </div>
+        </div>
+    </section>
+    <section>
+        <h2>Message</h2>
+        <div class="message-img"><img src="srimoy2.png" alt=""></div>
+        <p>Srimoy Bhattacharjee</p>
+        <p>Founder & President</p>
+        <p>AARYA stands as a paragon of versatility, transcending mere organizational bounds to become a dynamic force
+            committed to catalyzing positive change.
+            Our dedication extends across diverse sectors, employing a holistic approach to address uncharted
+            territories with unwavering resolve. <br>
+
+            Within AARYA, we are more than an organization; we are a familial community dedicated to the
+            self-development of our members, sculpting leaders for tomorrow. Our emphasis on personal growth is
+            profound, nurturing individuals into exemplary human beings. In AARYA, we coalesce as a harmonious family,
+            united in our pursuit of excellence. <br>
+
+            The profound love bestowed upon us since day one is the catalyst propelling our passion. We earnestly seek
+            your steadfast support on this transformative journey. Your invaluable advice and perspectives on each
+            initiative are not just welcomed but cherished, fostering a collaborative ethos for enduring impact.</p>
+        <br>
+        <div class="message-img"><img src="soumyadeep.jpg" alt=""></div>
+        <p>Soumyadeep Bhattacharjee</p>
+        <p>Vice President</p>
+        <p>Hello,<br> I'm Soumyadeep Bhattacharjee, a final semester Mechanical Engineering student and Vice President
+            of
+            AARYA Youth Organisation. I joined 1.5 years ago, contributing to our NGO's growth. We've become a leading
+            organization, recognized by Hon'ble MLA Silchar, Hon'ble MP Silchar, DC Cachar, SP Cachar, and others. Our
+            team's dedication resulted in awards for social service. As VP, I emphasize collaboration, innovation, and
+            sustainability. Despite challenges, our team's dedication ensures successful project completion. I invite
+            more students and professionals to join us for positive societal change. Our dedication and strategic
+            brilliance set a standard for excellence. <br> Thank you!</p>
+        <div class="message-img"><img src="nobonita.jpg" alt=""></div>
+        <p>Nobonita Das</p>
+        <p>General Secretary</p>
+        <p>In the kaleidoscope of Aarya, each member is a vibrant hue, blending dedication, passion, and purpose. <br>
+
+            As the General Secretary, I am privileged to witness the symphony of shared dreams and collective
+            achievements that define our organization. <br>
+
+
+            Aarya is not just a name; it's a melody of aspirations, played by every member, creating a harmonious
+            tapestry of success. <br>
+            Together, let us continue composing the extraordinary story of Aarya, where each note contributes to the
+            grand symphony of our shared journey. <br>
+            Your commitment is the key that unlocks the melody of our collective success.</p>
+
+    </section>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const hamburgerIcon = document.querySelector('.hamburger-container');
+            const navMenu = document.querySelector('.nav-menu');
+
+            hamburgerIcon.addEventListener('click', function () {
+                navMenu.classList.toggle('active');
+            });
+        });
+    </script>
+    
+
+</body>
+
+</html>

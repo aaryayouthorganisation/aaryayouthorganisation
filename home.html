@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aarya Youth Organisation</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('bg2.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: #fff;
+            background-color: grey;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: -1;
+        }
+
+        header {
+            background-color: transparent;
+
+            padding: 120px;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+            margin-right: 100px;
+
+        }
+
+
+        section {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            text-decoration: none;
+            background-color: #007BFF;
+            color: #fff;
+            border-radius: 5px;
+            transition: 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #0056b3;
+        }
+
+        .footer1 {
+            background-color: #1a1a1a;
+            padding: 10px;
+            text-align: center;
+            color: #fff;
+
+            bottom: 0;
+            width: 100%;
+        }
+
+        .logo {
+
+            height: 194px;
+            border-radius: 50%;
+        }
+
+        /* nav {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: transparent;
+            padding: 10px;
+            display: flex;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: underline;
+            margin: 0 10px;
+        }
+
+        nav a:hover {
+
+            transition: 0.1s;
+
+            font-size: 18px;
+
+
+        } */
+
+
+        .hamburger-container {
+            display: none;
+
+            cursor: pointer;
+            padding: 10px;
+        }
+
+        .hamburger-container i {
+            font-size: 24px;
+        }
+
+
+        .nav-menu {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .nav-menu a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 18px;
+        }
+
+
+        @media (max-width: 768px) {
+            .hamburger-container {
+                display: block;
+            }
+
+            .nav-menu {
+                display: none;
+
+                flex-direction: column;
+                background-color: rgba(0, 0, 0, 0.7);
+                position: absolute;
+                top: 60px;
+
+                left: 0;
+                width: 100%;
+                z-index: 1;
+            }
+
+            .nav-menu a {
+                margin: 10px 0;
+            }
+
+            .nav-menu.active {
+                display: flex;
+            }
+        }
+
+
+
+        form {
+
+            max-width: 600px;
+            margin: auto;
+
+            background-color: transparent;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        form label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        form input,
+        form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        header h1 {
+            margin: 0;
+            margin-right: 120px;
+            font-size: 20px;
+
+        }
+
+        section.services {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            padding: 40px;
+        }
+
+        .service-box {
+            box-sizing: border-box;
+            width: 30%;
+            padding: 20px;
+            margin: 10px;
+
+            background-color: transparent;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+            text-align: center;
+        }
+
+        .service-box:hover {
+            transform: scale(1.05);
+        }
+
+        .service-box img {
+            width: 210px;
+            height: 210px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+
+        .service-box h2 {
+            margin-bottom: 10px;
+        }
+
+        .join {
+            color: white;
+        }
+
+        .join a {
+            color: white;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        .member {
+            display: inline-block;
+            margin: 20px;
+        }
+
+        .member img {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #fff;
+
+        }
+
+        .member p {
+            margin: 10px 0;
+        }
+
+        .member:hover img {
+            transform: scale(1.1);
+        }
+
+        .footer {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            width: 100%;
+        }
+
+        .social-icons {
+            font-size: 24px;
+            margin: 10px;
+        }
+
+        .social-icons a {
+            color: white;
+            padding: 5px;
+        }
+
+        .social-icons a:hover {
+            font-size: 26px;
+            transition: 0.1s;
+
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        .footer-links li {
+            margin: 0 10px;
+        }
+
+        .footer-links a {
+            text-decoration: underline;
+            color: white;
+        }
+
+        .footer-links a:hover {
+            font-size: 18px;
+            transition: 0.1s;
+
+        }
+
+        header p {
+            margin-right: 110px;
+        }
+
+        .heading {
+            margin-top: 63px;
+        }
+
+        
+
+        .event {
+            border: 1px solid #ddd;
+            padding: 1em;
+            margin-bottom: 1em;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 60px;
+            }
+        }
+
+        /* @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                align-items: center;
+                padding: 20px;
+            }
+
+            nav a {
+                margin: 10px 0;
+            }
+        } */
+
+        section {
+            padding: 40px;
+        }
+
+        @media (max-width: 768px) {
+            section {
+                padding: 20px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .service-box {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                display: block;
+            }
+        }
+        .update-Info{
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .updates {
+            margin-top: 20px;
+        }
+        .update {
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="event.html">Events</a>
+        <a href="join.html">Join Us</a>
+    </nav> -->
+    <!-- Add this inside the <body> section -->
+
+    <!-- Hamburger icon container -->
+    <div class="hamburger-container">
+        <i class="fas fa-bars"></i>
+    </div>
+
+    
+    <nav class="nav-menu">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+
+        <a href="event.html">Events & Activities</a>
+        <a href="join.html">Join Us</a>
+        <a href="updates.html">Latest Updates</a>
+        <a href="subcription.html">Subcription</a>
+    </nav>
+
+
+    <section class="heading">
+        <img src="logo (2).jpg" alt="Your Startup Logo" class="logo">
+        <h1>Aarya Youth Organisation</h1>
+        <p>Registered under Societies Act of XXI of 1860 RS/CA/243/R/16 of 2023-24</p>
+    </section>
+
+
+    <section>
+        <h2 class="join">Join Our Community</h2>
+        <p class="join">Be part of the innovation. Fill out the form below to join our community and stay updated with
+            the latest events and opportunities.</p>
+
+        <form action="https://api.web3forms.com/submit" method="post">
+            <input type="hidden" name="access_key" value="24f2ea62-9b3e-4ee4-a812-87566a8ba89b">
+            <label for="name" class="join"><i class="fa-regular fa-user"></i> Your Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email" class="join"><i class="fa-regular fa-envelope"></i> Your Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="number" class="join" ><i class="fa-solid fa-phone"></i> Your Phone number:</label>
+            <input type="number" id="number" name="number" required>
+
+            <label for="message" class="join">Why do you want to join us?</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+
+            <button type="submit" class="cta-button">Join Now</button>
+        </form>
+    </section>
+
+
+    
+
+    <section>
+        <h2>Upcoming events</h2>
+        <p>Stay tuned for exciting events happening soon!</p>
+    </section>
+    <section>
+
+        <div class="event">
+            <h3>Event 1- PCOS/PCOD Awareness Seminar</h3>
+            <p>Date: The date for this event is yet to be determined.</p>
+
+        </div>
+    </section>
+
+
+    <section>
+        <h2>Past Events</h2>
+    </section>
+
+    <section class="services">
+        <div class="service-box">
+            <img src="cleanliness.jpg" alt="Service 3">
+            <h2>Cleanliness Drive</h2>
+            <p>"Aarya Youth Org joined MLA Shri Dipayan Chakraborty's Cleanliness Drive for a greener planet. Together
+                with diverse NGOs, we took strides towards sustainability. Today, we embraced the responsibility for a
+                cleaner planet with passion."</p>
+        </div>
+        <div class="service-box">
+            <img src="IMG_20240114_203220.jpg" alt="Service 3">
+            <h2>Raktadaan</h2>
+            <p>"Fuel the spirit of giving! Join Aarya Youth Organisation on December 29th for our Blood Donation Camp.
+                Your blood is a lifeline, and together, let's reach maximum donors to spread hope and save lives.
+                Embrace the power to make a difference!"</p>
+        </div>
+        <div class="service-box">
+            <img src="IMG_20240114_203305.jpg" alt="Service 1">
+            <h2>Project Udaan</h2>
+            <p>Aarya Youth Organisation's initiative, "Udaan" focuses on distributing sanitary pads to address menstrual
+                hygiene. This NGO aims to empower women by providing access to essential sanitary products, fostering a
+                positive impact on their health and well-being.</p>
+        </div>
+
+        <!-- <div class="service-box">
+            <img src="IMG_20240114_203236.jpg" alt="Service 2">
+            <h2>Cloth Donation Drive</h2>
+            <p>"Donate your old clothes for those who are waiting for their new ones! Let's share the warmth this
+                winter. Don't miss the chance to contribute- the last date for donations is December 26th, 2024.
+                Together, let's make a difference" </p>
+        </div> -->
+
+        
+        
+    </section>
+    <section><a href="event.html" class="cta-button">Read More</a></section>
+</section>
+<section><a href="event.html" class="cta-button">Read More</a></section>
+<section class="update-Info">
+    <h2 class="update">Latest Updates</h2>
+
+    <div class="updates">
+        <p class="update"><strong>1) List of Executive Members of Aarya Youth Organisation</strong> <a
+                href="List of Executive Members.pdf" download class="cta-button"><i class="fa-solid fa-file-pdf"></i>
+                Download PDF<i class="fa-solid fa-download"></i></a></p>
+        
+    </div>
+
+</section>
+<section>
+    <h2>Monthly Subscription</h2>
+
+<form action="https://api.web3forms.com/submit" method="POST">
+
+    <input type="hidden" name="access_key" value="24f2ea62-9b3e-4ee4-a812-87566a8ba89b">
+
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="phone">Phone Number:</label>
+    <input type="tel" id="phone" name="phone" required>
+
+    <label for="amount">Amount:</label>
+    <input type="number" id="amount" name="amount" required>
+
+
+
+    <label for="qrCode">QR Code Scan:</label>
+    <img src="QR Scan.jpg" alt="QR Code" id="qrCode" style="width: 165px;height: 165px;">
+
+    <label for="paymentScreenshot">Payment Screenshot:</label>
+    <input type="file" id="paymentScreenshot" name="paymentScreenshot" accept="image/*" required>
+
+    <label for="amount">UPI transaction ID:</label>
+    <input type="text" id="transactionID" name="transactionID" required>
+
+    <button type="submit" class="cta-button">Submit</button>
+</form>
+<script>
+    document.getElementById('subscriptionForm').addEventListener('submit', function (event) {
+        event.preventDefault();
+
+
+        alert('Subscription successful!');
+    });
+</script>
+
+
+</section>
+
+
+
+    <section class="footer">
+        <div class="social-icons">
+            <a href="https://www.instagram.com/aarya.ngo?igsh=Z3g2dnN5cmxqazZh" target="_blank" title="Instagram"><i
+                    class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com/aaryaorganisation?mibextid=ZbWKwL" target="_blank" title="Facebook"><i
+                    class="fab fa-facebook"></i></a>
+            <a href="https://www.linkedin.com/in/aarya-youth-organisation-a031a92ab?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="https://www.youtube.com/c/yourchannel" target="_blank"><i class="fab fa-youtube"></i></a>
+            <a href="https://x.com/AaryaYouth_Org?t= " target="_blank"><i class="fab fa-twitter"></i></a>
+
+        </div>
+        <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <!-- <li><a href="events.html">Events</a></li> -->
+            <li><a href="about.html">About</a></li>
+            <li><a href="join.html">Join us</a></li>
+        </ul>
+        <div class="contact-info">
+            <p class="join">Email: <a href="aaryaforworld@gmail.com">aaryaforworld@gmail.com</a></p>
+            <p>Phone: 8471862787 / 7002975762</p>
+        </div>
+    </section>
+
+
+    <footer class="footer1">
+        <p>&copy; 2024 Aarya Youth Organisation. All rights reserved.</p>
+    </footer>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const hamburgerIcon = document.querySelector('.hamburger-container');
+            const navMenu = document.querySelector('.nav-menu');
+
+            hamburgerIcon.addEventListener('click', function () {
+                navMenu.classList.toggle('active');
+            });
+        });
+    </script>
+
+</body>
+
+</html>

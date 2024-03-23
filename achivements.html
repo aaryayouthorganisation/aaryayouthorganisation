@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Achievements</title>
+</head>
+<style>
+    body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('bg2.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: #fff;
+            background-color: grey;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: -1;
+        }
+        section.achivements{
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            padding: 40px;
+
+        }
+        .achivement-box{
+            box-sizing: border-box;
+            width: 30%;
+            padding: 20px;
+            margin: 10px;
+
+            background-color: transparent;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+            text-align: center;
+
+        }
+
+        .achivement-box:hover {
+            transform: scale(1.05);
+        }
+        .achivement-box img {
+            width: 210px;
+            height: 210px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+
+        .achivement-box h2 {
+            margin-bottom: 10px;
+        }
+        section h2{
+            text-align: center;
+        }
+        @media (max-width: 768px) {
+            .achivement-box {
+                width: 100%;
+            }
+        }
+
+</style>
+<body>
+    <section>
+        <h2>Our Achievements</h2>
+    </section>
+
+    <section class="achivements">
+
+        <div class="achivement-box">
+            <img src="dipyanchakraborty.jpg" alt="Service 3">
+            <p>"Grateful for the honour bestowed by Honourable MLA of Silchar Constituency Shri Dipayan Chakraborty for
+                actively participating in the cleanliness drive in the town organised on the occasion of Ram mandir
+                pratishtha.
+                "</p>
+        </div>
+        <div class="achivement-box">
+            <img src="barakaward.jpg" alt="Service 3">
+            <p>"On 16th of January 23 Team Aarya was awarded in the BARAK AWARDS 2023 for it's work for the society. We
+                thank Joy Radha Seba Samiti for felicitating us and we would also like to congratulate them for hosting
+                the event with such grace."</p>
+        </div>
+        <div class="achivement-box">
+            <img src="hope for gem.jpg" alt="Service 3">
+            <p>"A day to remember for Team Aarya! On 9th January 23 Team Aarya was awarded with the category of NGO by
+                @hopeforgemssociety in the Barak Iconic Awards! We would like to thank Hopes For Gems Society for the
+                recognition.
+                "</p>
+        </div>
+        <div class="achivement-box">
+            <img src="KRC foundation.jpg" alt="Service 3">
+            <p>"Team Aarya is glad to receive another award for their work towards the society! We thank Lifeline
+                Forever Foundation and KRC Foundation for this token of appreciation and we congratulate them on
+                successfully hosting the VISION 2023 Event!"</p>
+        </div>
+
+    </section>
+
+    
+</body>
+</html>

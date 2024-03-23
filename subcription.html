@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monthly Subscription</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('bg2.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: #fff;
+            background-color: grey;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: -1;
+        }
+
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input,
+        select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+        h2{
+            text-align: center;
+        }
+        @media screen and (max-width: 600px) {
+            form {
+                width: 90%;
+            }
+        }
+        .hamburger-container {
+            display: none;
+
+            cursor: pointer;
+            padding: 10px;
+        }
+
+        .hamburger-container i {
+            font-size: 24px;
+        }
+
+
+        .nav-menu {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .nav-menu a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 18px;
+        }
+
+
+        @media (max-width: 768px) {
+            .hamburger-container {
+                display: block;
+            }
+
+            .nav-menu {
+                display: none;
+
+                flex-direction: column;
+                background-color: rgba(0, 0, 0, 0.7);
+                position: absolute;
+                top: 60px;
+
+                left: 0;
+                width: 100%;
+                z-index: 1;
+            }
+
+            .nav-menu a {
+                margin: 10px 0;
+            }
+
+            .nav-menu.active {
+                display: flex;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="hamburger-container">
+        <i class="fas fa-bars"></i>
+    </div>
+
+    
+    <nav class="nav-menu">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+
+        <a href="event.html">Events & Activities</a>
+        <a href="join.html">Join Us</a>
+        <a href="updates.html">Latest Updates</a>
+        <a href="subcription.html">Subcription</a>
+    </nav>
+    <h2>Monthly Subscription</h2>
+
+    <form action="https://api.web3forms.com/submit" method="POST">
+
+        <input type="hidden" name="access_key" value="24f2ea62-9b3e-4ee4-a812-87566a8ba89b">
+
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" required>
+
+        <label for="amount">Amount:</label>
+        <input type="number" id="amount" name="amount" required>
+
+
+
+        <label for="qrCode">QR Code Scan:</label>
+        <img src="QR Scan.jpg" alt="QR Code" id="qrCode" style="width: 144px;height: 144px;">
+
+        <label for="paymentScreenshot">Payment Screenshot:</label>
+        <input type="file" id="paymentScreenshot" name="paymentScreenshot" accept="image/*" required>
+
+        <label for="amount">UPI transaction ID:</label>
+        <input type="text" id="transactionID" name="transactionID" required>
+
+        <button type="submit">Submit</button>
+    </form>
+    <script>
+        document.getElementById('subscriptionForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+    
+    
+            alert('Subscription successful!');
+        });
+    </script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const hamburgerIcon = document.querySelector('.hamburger-container');
+            const navMenu = document.querySelector('.nav-menu');
+
+            hamburgerIcon.addEventListener('click', function () {
+                navMenu.classList.toggle('active');
+            });
+        });
+    </script>
+    
+
+    
+    
+
+
+</body>
+
+</html>

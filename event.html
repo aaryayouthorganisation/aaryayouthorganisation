@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('bg2.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: #fff;
+            background-color: grey;
+        }
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: -1;
+        }
+        section.services {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            padding: 40px;
+        }
+
+        .service-box {
+            box-sizing: border-box;
+            width: 30%;
+            padding: 20px;
+            margin: 10px;
+            background-color: transparent;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+            text-align: center;
+        }
+
+        .service-box:hover {
+            transform: scale(1.05);
+        }
+
+        .service-box img {
+            /* max-width: 100%;
+            height: auto; */
+            height: 190px;
+            width: 190px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+
+        .service-box h2 {
+            margin-bottom: 10px;
+        }
+        section h1{
+            text-align: center;
+            justify-content: center;
+        }
+        @media (max-width: 768px) {
+            .service-box {
+                width: 100%;
+            }
+        }
+        .hamburger-container {
+            display: none;
+
+            cursor: pointer;
+            padding: 10px;
+        }
+
+        .hamburger-container i {
+            font-size: 24px;
+        }
+
+
+        .nav-menu {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .nav-menu a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 18px;
+        }
+
+
+        @media (max-width: 768px) {
+            .hamburger-container {
+                display: block;
+            }
+
+            .nav-menu {
+                display: none;
+
+                flex-direction: column;
+                background-color: rgba(0, 0, 0, 0.7);
+                position: absolute;
+                top: 60px;
+
+                left: 0;
+                width: 100%;
+                z-index: 1;
+            }
+
+            .nav-menu a {
+                margin: 10px 0;
+            }
+
+            .nav-menu.active {
+                display: flex;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="hamburger-container">
+        <i class="fas fa-bars"></i>
+    </div>
+
+    
+    <nav class="nav-menu">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+
+        <a href="event.html">Events & Activities</a>
+        <a href="join.html">Join Us</a>
+        <a href="updates.html">Latest Updates</a>
+        <a href="subcription.html">Subcription</a>
+    </nav>
+    <section>
+        <h1>Events</h1>
+    </section>
+    <section class="services">
+        <div class="service-box">
+            <img src="cleanliness.jpg" alt="Service 4">
+            <h2>Cleanliness Drive</h2>
+            <p>"Aarya Youth Org joined MLA Shri Dipayan Chakraborty's Cleanliness Drive for a greener planet. Together
+                with diverse NGOs, we took strides towards sustainability. Today, we embraced the responsibility for a
+                cleaner planet with passion."</p>
+        </div>
+        <div class="service-box">
+            <img src="IMG_20240114_203220.jpg" alt="Service 3">
+            <h2>Raktadaan</h2>
+            <p>"Fuel the spirit of giving! Join Aarya Youth Organisation on December 29th for our Blood Donation Camp.
+                Your blood is a lifeline, and together, let's reach maximum donors to spread hope and save lives.
+                Embrace the power to make a difference!"</p>
+        </div>
+        <div class="service-box">
+            <img src="IMG_20240114_203236.jpg" alt="Service 2">
+            <h2>Cloth Donation Drive</h2>
+            <p>"Donate your old clothes for those who are waiting for their new ones! Let's share the warmth this
+                winter. Don't miss the chance to contribute- the last date for donations is December 26th, 2024.
+                Together, let's make a difference" </p>
+        </div>
+        <div class="service-box">
+            <img src="IMG_20240114_203305.jpg" alt="Service 1">
+            <h2>Project Udaan</h2>
+            <p>Aarya Youth Organisation's initiative, "Udaan" focuses on distributing sanitary pads to address menstrual
+                hygiene. This NGO aims to empower women by providing access to essential sanitary products, fostering a
+                positive impact on their health and well-being.</p>
+        </div>
+       
+        
+    </section>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const hamburgerIcon = document.querySelector('.hamburger-container');
+            const navMenu = document.querySelector('.nav-menu');
+
+            hamburgerIcon.addEventListener('click', function () {
+                navMenu.classList.toggle('active');
+            });
+        });
+    </script>
+    
+</body>
+</html>
